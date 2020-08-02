@@ -32,7 +32,7 @@
       <header class="section page-header">
         <div class="container">
           <div class="row justify-content-between align-items-end row-30">
-            <div class="col-12 col-md-6"><a class="brand-logo" href="./"><img src="{{ url_for('static', filename='images/logo-default-346x62.png') }}" alt="" width="346" height="62"/></a></div>
+            <div class="col-12 col-md-6"><a class="brand-logo" href="./"><img src="{{ url_for('static', filename='images/logo-default-346x62.png') }}" alt="" /></a></div>
             <div class="col-12 col-md-6 col-xl-4">
               <div class="head-title">
                 <p>I am a professional specializing <br class="d-none d-md-inline-block">in programming.</p>
@@ -75,9 +75,12 @@
                         </div>
                         <div class="gallery-wrap-inner">
                           <!-- Owl Carousel-->
-                          <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-lifestyle"><a class="gallery-item" href="{{ url_for('static', filename='images/gallery-lifestyle-07-970x524.jpg') }}" data-lightgallery="item">
-                              <figure><img src="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" alt="" width="970" height="524"/>
+                          <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-lifestyle">
+                              
+                              <figure><img src="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" alt="" />
+                              <div class="align-content-center"><h4><a href="http://htmlbook.ru/html/area/alt">Go to the site></a></h4></div>
                               </figure>
+                              
                               <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" data-lightgallery="item">
                               <figure><img src="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" alt="" width="970" height="524"/>
                               </figure>
@@ -153,7 +156,7 @@
                           <!-- Owl Carousel-->
                           <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-fashion"><a class="gallery-item" href="{{ url_for('static', filename='images/django1.png') }}" data-lightgallery="item">
 
-                              <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt="" width="970" height="524"/>
+                              <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt=""/>
                               </figure>
                               <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-01-970x524.jpg') }}" data-lightgallery="item">
 
@@ -283,7 +286,6 @@
                               <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-city-07-970x524.jpg') }}" data-lightgallery="item">
                               <figure><img src="{{ url_for('static', filename='images/gallery-city-07-970x524.jpg') }}" alt="" width="970" height="524"/>
                               </figure>
-                              
                           </div>
                         </div>
                       </div>

@@ -954,7 +954,6 @@ p + .list-marked {
 img {
 	display: inline-block;
 	max-width: 100%;
-	height: auto;
 }
 
 .img-responsive {
@@ -2282,7 +2281,7 @@ textarea.form-input {
 * Headers
 */
 .page-header {
-	padding: 40px 0;
+	padding: 10px 0;
 }
 
 @media (min-width: 1200px) {
@@ -2295,6 +2294,8 @@ textarea.form-input {
 	vertical-align: middle;
 	text-align: left;
 	display: inline-block;
+	width: 300px;
+	height: 100px;
 }
 
 .brand-logo:hover {
@@ -2350,7 +2351,7 @@ textarea.form-input {
 }
 
 .gallery-item img {
-	width: 100%;
+	width: auto;
 }
 
 
@@ -3749,7 +3750,7 @@ html:not(.lt-ie10) .not-animated {
 
 .tabs-corporate .tab-content {
 	position: relative;
-	padding: 30px 0 0;
+
 }
 
 @media (min-width: 768px) {
