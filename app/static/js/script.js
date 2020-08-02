@@ -98,6 +98,8 @@
 
 					if (carousel.attr('data-active')) {
 						active = parseInt(carousel.attr('data-active'), 10);
+						console.log(active);
+						
 					}
 
 					carousel.trigger('to.owl.carousel', [active, 300, true]);
