@@ -10,7 +10,8 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Barlow:100,200,300,400,700">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
@@ -75,10 +76,17 @@
                         </div>
                         <div class="gallery-wrap-inner">
                           <!-- Owl Carousel-->
-                          <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-lifestyle"><a class="gallery-item" href="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" data-lightgallery="item">
-                              <figure id="img1"><img src="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" alt="" />
-                              </figure>
-                              <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-portrait-01-970x524.jpg') }}" data-lightgallery="item">
+                          <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-lifestyle">
+                              <div>
+                                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" data-lightgallery="item">
+                                <figure><img src="{{ url_for('static', filename='images/gallery-lifestyle-01-970x524.jpg') }}" alt="" width="970" height="524" />
+                                </figure>
+                                <div class="button-item text-center my-2">
+                                  <a class="btn1" href="">Go to the site</a>
+                                </div>
+                              </div>
+   
+                              <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-portrait-02-970x524.jpg') }}" data-lightgallery="item"> 
                               <figure><img src="{{ url_for('static', filename='images/gallery-portrait-02-970x524.jpg') }}" alt="" width="970" height="524"/>
                               </figure>
                               <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-portrait-03-970x524.jpg') }}" data-lightgallery="item">

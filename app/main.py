@@ -3,4 +3,4 @@ import view
 from app import db
 
 if __name__ == '__main__':
-    app.run(port=3000)
+    app.run(port=2000)
