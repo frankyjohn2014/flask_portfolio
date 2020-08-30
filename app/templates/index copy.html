@@ -58,15 +58,14 @@
               <div class="tab-pane fade show active" id="tabs-1-1">
                 <div class="tabs-custom tabs-horizontal tabs-gallery hide-on-modal" id="tabs-galery">
                     {% block content %}
-                        
-                        {% for category in categorys %}
-                          <p>
-                            <a href="{{ url_for('category_detail', slug=category.slug) }}">{{ category.title }}</a>
-                            
-                          </p>
-                          
-                        {% endfor %}
-                          
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('posts_python.python') }}" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-01-180x180.jpg') }}" alt="" width="180" height="180"/><span>Python3</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('posts_flask.flask') }}" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-02-180x180.jpg') }}" alt="" width="180" height="180"/><span>Flask</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-gallery-3" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-03-180x180.jpg') }}" alt="" width="180" height="180"/><span>Django3</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-gallery-4" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-04-180x180.jpg') }}" alt="" width="180" height="180"/><span>C/C#</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-gallery-5" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-05-180x180.jpg') }}" alt="" width="180" height="180"/><span>JavaScript</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-gallery-6" data-toggle="tab"><img src="{{ url_for('static', filename='images/gallery-06-180x180.jpg') }}" alt="" width="180" height="180"/><span>React</span></a></li>
+                      </ul>
                     {% endblock content %}
                   </div>
                 </div>

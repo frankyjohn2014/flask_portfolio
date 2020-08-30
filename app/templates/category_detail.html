@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    {{ post}}
+{% endblock title %}
+    
+    
+
+{% block content %}
+    <div class="tab-content">
+        <div class="gallery-wrap">
+            <div class="gallery-wrap-inner">
+            <h4>Jobs: {{ category.title }}</h4>
+            <div class="dots-custom-portrait"></div><a class="back-to-gallery button-link button-link-icon" href="/"><span class="novi-icon icon icon-primary fa fa-angle-left"></span><span>back to gallery</span></a>
+            </div>
+            <div class="gallery-wrap-inner">
+            <!-- Owl Carousel-->
+            <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-portrait">
+                {% for post in posts %}
+                <a href="">{{ post.title }}</a>
+                <!-- <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt=""/>
+                </figure> -->
+                {% endfor %}
+                <!-- <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt=""/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-01-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-01-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-02-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-02-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-04-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-04-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-05-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-05-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-06-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-06-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-07-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-07-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure>
+                <a class="gallery-item" href="{{ url_for('static', filename='images/gallery-fashion-08-970x524.jpg') }}" data-lightgallery="item">
+                <figure><img src="{{ url_for('static', filename='images/gallery-fashion-08-970x524.jpg') }}" alt="" width="970" height="524"/>
+                </figure> -->
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+    
