@@ -18,21 +18,24 @@ def thumb_name(filename):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(140))
-    slug =  db.Column(db.String(140), unique=True)
+    description =  db.Column(db.String(140))
     url_site = db.Column(db.String(140))
-
+    categorys = db.relationship('Category', secondary=post_category, backref=db.backref('posts', lazy='dynamic'))
+    path = db.Column(db.Unicode(128))
+    type = db.Column(db.Unicode(3)) 
+    create_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    
     def __init__(self, *args, **kwargs):
         super(Category, self).__init__(*args, **kwargs)
         self.generate_slug()
-    
-    categorys = db.relationship('Category', secondary=post_category, backref=db.backref('posts', lazy='dynamic'))
+
 
     def generate_slug(self):
         if self.title:
             self.slug = slugify(self.title)
 
     def __repr__(self):
-        return '<Tag id:{}, title: {}>'.format(self.id, self.title)
+        return 'id:{}\n title: {}'.format(self.id, self.title)
 
 
 # class StorageModel(db.Model):
@@ -62,5 +65,6 @@ class Category(db.Model):
             self.slug = slugify(self.title)
 
     def __repr__(self):
-        return '<Tag id:{}, title: {}>'.format(self.id, self.title)
+        # return 'id:{}, title: {}'.format(self.id, self.title)
+        return self.title
     

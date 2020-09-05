@@ -18,9 +18,16 @@
             <!-- Owl Carousel-->
             <div class="owl-carousel owl-gallery" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-lightgallery="group" data-pagination-class=".dots-custom-portrait">
                 {% for post in posts %}
-                <a href="">{{ post.title }}</a>
-                <!-- <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt=""/>
-                </figure> -->
+                
+                <figure>
+                    <div class="text-center mb-4">
+                        <h3>{{ post.title }}</h3>
+                    </div>
+                    <img src="static/{{post.path}}" alt=""/>
+                    <div class="button-item text-center my-2">
+                        <a class="btn1 mt-2 align-middle" href="https://scrap-job.herokuapp.com/">Перейти на сайт</a>
+                    </div>
+                </figure>
                 {% endfor %}
                 <!-- <figure><img src="{{ url_for('static', filename='images/django1.png') }}" alt=""/>
                 </figure>
