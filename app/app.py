@@ -1,8 +1,8 @@
-from flask import Flask, url_for, Markup
+from flask import Flask, url_for, Markup,redirect,request
 from config import Configuration
 from flask_sqlalchemy import SQLAlchemy
 from posts.blueprint import posts_python,posts_flask
-from flask_admin import Admin  
+from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
@@ -28,6 +28,9 @@ from flask_admin import form
 import random
 import os
 
+from flask_security import SQLAlchemyUserDatastore,current_user
+from flask_security import Security
+from flask_security import login_required
 class PostView(ModelView):
     column_display_pk = True # optional, but I like to see the IDs in the list
     column_hide_backrefs = False
@@ -143,8 +146,37 @@ class StorageAdminModel(sqla.ModelView):
             super(StorageAdminModel, self).create_form(obj)
         )
 
+class BaseModelView(ModelView):
+    def on_model_change(self, form, model, is_created):
+        model.generate_slug()
+        return super(BaseModelView, self).on_model_change(form,model,is_created)
 
-admin = Admin(app)
-admin.add_view(PostView(Post, db.session))
-admin.add_view(StorageAdminModel(Category, db.session))
+
+#  create in model.py slug, if need detail slug post
+class PostAdminView(PostView, BaseModelView):
+    pass
+
+class CategoryAdminView(StorageAdminModel, BaseModelView):
+    pass
+
+user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+security = Security(app, user_datastore)
+
+# class AdminView(ModelView):
+#     def is_accessible(self):
+#         return current_user.has_role('admin')
+
+#     def inaccessible_callback(self, name, **kwargs):
+#         return redirect(url_for('security.login', next=request.url))
+
+class HomeAdminView(AdminIndexView):
+    def is_accessible(self):
+        return current_user.has_role('admin')
+
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('security.login', next=request.url))
+
+admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminView(name='Home'))
+admin.add_view(PostAdminView(Post, db.session))
+admin.add_view(CategoryAdminView(Category, db.session))
 # admin.add_view(ModelView(Category, db.session))

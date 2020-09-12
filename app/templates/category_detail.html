@@ -23,7 +23,14 @@
                     <div class="text-center mb-4">
                         <h3>{{ post.title }}</h3>
                     </div>
+                    {% if post.type in ['jpg', 'jpeg', 'png', 'svg', 'gif'] %}
                     <img src="static/{{post.path}}" alt=""/>
+                    {% else %}
+                    <video width="720" height="480" controls>
+                        <source src={{ url_for('static', filename="demo.mp4") }} type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    {% endif %}
                     <div class="button-item text-center my-2">
                         <a class="btn1 mt-2 align-middle" href="https://scrap-job.herokuapp.com/">Перейти на сайт</a>
                     </div>
