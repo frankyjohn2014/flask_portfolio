@@ -31,6 +31,8 @@ import os
 from flask_security import SQLAlchemyUserDatastore,current_user
 from flask_security import Security
 from flask_security import login_required
+
+
 class PostView(ModelView):
     column_display_pk = True # optional, but I like to see the IDs in the list
     column_hide_backrefs = False
