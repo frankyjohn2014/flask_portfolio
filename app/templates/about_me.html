@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    {{ post}}
+{% endblock title %}
+    
+    
+
+{% block content %}
+<div class="tab-pane fade active show" id="tabs-1-2">
+    <div class="content-box hide-on-modal">
+      <div class="content-box-inner">
+        <div class="row align-items-center row-30 row-md-30">
+          <div class="col-12 col-md-6 col-lg-7">
+            <figure><img src="{{ url_for('static', filename='images/iam.jpeg') }}" alt="" width="350" height="450">
+            </figure>
+          </div>
+          <div class="col-12 col-md-6 col-lg-5">
+            <h5><p class="subtitle">My first experience in programming</p></h5>
+            <p></p>I began to program with the university, programmed AVR (Arduino) microcontrollers, then passed to ARM (STM32). During study I did theses (desktop applications), to other students in the language C# Unity, WPF. 
+              Web began to study technologies in 2020, having chosen resolutely to replace a profession.
+            </p>
+            <h5><p class="subtitle">What I know</p></h5>
+            <p>Python, Django/Flask, HTML/CSS, JavaScript/Jquery, React, Postgres, Mysql</p>
+            <p>P.S. Working on Node.js, MongoDB and Machine Learning.</p>
+          </div>
+        </div>
+      </div><a class="close-content-box" href="/">x</a>
+    </div>
+    <div class="modal slideUp" id="modal-about-us" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="content-box">
+            <div class="content-box-inner">
+              <div class="row">
+                <div class="col-12">
+                  <h3>A Few Words About Me</h3>
+                  <p>Dastqui dolorem ipsumquia dolsitmet conse tequam eius. Asmodi tempora incid. Dent ut labore t dolore magnam. Naliquam quae. Rat voleneni ullam corporis suscipit labasic ut aliquidea commodi consequatur. Aquis autem vel eum iure reprehenderit, muytasas dresasaser. Esse, quam nihil molestiae consequatur, vel illum. Dastqui dolorem ipsumquia dolsitmet conse tequam eius. Asmodi tempora incid. Dent ut labore t dolore magnam. Naliquam quae.</p>
+                  <p>Rat voleneni ullam corporis suscipit labasic ut aliquidea commodi consequatur. Aquis autem vel eum iure reprehenderit. Asas dresasaser. Esse, quam nihil molestiae consequatur, vel illum. Dastqui dolorem ipsumquia dolsitmet conse tequam eius. Asmodi tempora incid. Dent ut labore t dolore magnam. Naliquam quae. Rat voleneni ullam corporis suscipit labasic ut aliquidea commodi consequatur. Aquis autem vel eum iure reprehenderit, muytasas dresasaser. Esse, quam nihil molestiae consequatur, vel illum. Dastqui dolorem ipsumquia dolsitmet conse tequam eius. Asmodi tempo. Asas dresasaser. Esse, quam nihil molestiae consequatur, vel illum. Dastqui dolorem ipsumquia dolsitmet conse tequam eius. Asmodi tempora incid. Dent ut labore t dolore magnam. Naliquam quae. Rat voleneni ullam corporis suscipit labasic ut aliquidea</p>
+                </div>
+              </div>
+            </div><a class="close-modal-content-box" href="#" data-dismiss="modal">x</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+    

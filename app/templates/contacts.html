@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    {{ post}}
+{% endblock title %}
+    
+    
+
+{% block content %}
+<div class="tab-pane fade active show" id="tabs-1-4">
+    <div class="content-box hide-on-modal">
+      <div class="row row-30 justify-content-center align-items-center">
+        <div class="col-12 col-md-7">
+          <!--RD Mailform-->
+          <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" novalidate="novalidate">
+            <div class="row row-14 gutters-14">
+              <div class="col-sm-6">
+                <div class="form-wrap">
+                  <label class="form-label rd-input-label" for="contact-name">Name</label>
+                  <input class="form-input form-control-has-validation form-control-last-child" id="contact-name" type="text" name="name" data-constraints="@Required"><span class="form-validation"></span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-wrap">
+                  <label class="form-label rd-input-label" for="contact-phone">Phone</label>
+                  <input class="form-input form-control-has-validation form-control-last-child" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber"><span class="form-validation"></span>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-wrap">
+                  <label class="form-label rd-input-label" for="contact-message">Message</label>
+                  <textarea class="form-input form-control-has-validation form-control-last-child" id="contact-message" name="message" data-constraints="@Required"></textarea><span class="form-validation"></span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-wrap">
+                  <label class="form-label rd-input-label" for="contact-email">E-Mail</label>
+                  <input class="form-input form-control-has-validation form-control-last-child" id="contact-email" type="email" name="email" data-constraints="@Required @Email"><span class="form-validation"></span>
+                </div>
+              </div>
+              <div class="col-sm-6 align-self-end">
+                <div class="form-button">
+                  <button class="button button-lg button-block button-primary" type="submit">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-4">
+          <h3>Contact Info</h3>
+          <address class="subtitle">Minsk<br>Makayonka 13A/16</address>
+          <ul class="contact-info">
+            <li><span>Telephone:</span><a href="tel:#">+375336105624</a></li>
+            <li><span>E-mail:</span><a href="mailto:#">frankyjohn2014@gmail.com</a></li>
+          </ul>
+        </div>
+      </div><a class="close-content-box" href="/">x</a>
+    </div>
+  </div>
+
+{% endblock content %}
+    

@@ -20,6 +20,21 @@ def category_detail(slug):
         pass
     return render_template('category_detail.html', category=category, posts=posts)
 
+@app.route('/about_me')
+def about_me():
+    pass
+    return render_template('about_me.html')
+
+@app.route('/services')
+def services():
+    pass
+    return render_template('services.html')
+
+@app.route('/contacts')
+def contacts():
+    pass
+    return render_template('contacts.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
